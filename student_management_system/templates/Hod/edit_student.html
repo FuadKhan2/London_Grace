@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="page-wrapper">
+            <div class="content container-fluid">
+               <div class="page-header">
+                  <div class="row align-items-center">
+                     <div class="col">
+                        <h3 class="page-title">Edit Student</h3>
+                        <ul class="breadcrumb">
+                           <li class="breadcrumb-item"><a href="{% url 'hod_home' %}">Dashboard</a></li>
+                           <li class="breadcrumb-item active">Students</li>
+                           <li class="breadcrumb-item active">Add Student</li>
+                           <li class="breadcrumb-item active">Edit Student</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+<div class="row">
+                  <div class="col-sm-12">
+                     <div class="card">
+                        <div class="card-body">
+                           <form method="post" action="{% url 'update_student' %}" enctype="multipart/form-data">
+                              {% csrf_token %}
+                                 <div class="col-12">
+                                    <h5 class="form-title"><span style="color: blue;">Edit Student</span></h5>
+                                 </div>
+
+                                 {% include 'includes/messages.html' %}
+
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>First Name</label>
+                                       <input type="text" class="form-control" name="first_name" value="{% for i in student %}{{i.admin.first_name}}{% endfor %}" >
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>Last Name</label>
+                                       <input type="text" class="form-control" name="last_name" value="{% for i in student %}{{i.admin.last_name}}{% endfor %}" >
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>Student Image</label>
+                                       <input type="file" class="form-control" name="profile_pic" >
+                                       <input type="text" class="form-control" name="student_id" value="{% for i in student %}{{i.admin.id}}{% endfor %}" hidden>
+                                    </div>
+                                    {% if student.admin.profile_pic %}
+                                    <div>
+                                       <label>Current Profile Picture:</label>
+                                       <img src="{{ student.admin.profile_pic.url }}" alt="Current Profile Picture" width="100">
+                                    </div>
+                                    {% endif %}
+                                 </div>
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>Username</label>
+                                       <input type="text" class="form-control" name="username" value="{% for i in student %}{{i.admin.username}}{% endfor %}" >
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>Email ID</label>
+                                       <input type="email" class="form-control" name="email" value="{% for i in student %}{{i.admin.email}}{% endfor %}" >
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>Password</label>
+                                       <input type="password" class="form-control" name="password" PLACEHOLDER="Fill Only If You Want To Change Password">
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>Date of Birth</label>
+                                       <div>
+                                          <input type="date" class="form-control" name="date_of_birth" >
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>Gender</label>
+                                       <select class="form-control" name="gender" >
+                                          <option>Select Gender</option>
+                                          <option value="Female">Female</option>
+                                          <option value="Male">Male</option>
+                                          <option value="Others">Others</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>Class</label>
+                                       <select class="form-control" name="class_id" >
+                                          <option>Select Class</option>
+                                          {% for i in class %}
+                                          <option value="{{i.id}}">{{i.name}}</option>
+                                          {% endfor %}
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>Section</label>
+                                       <select class="form-control" name="section_id" >
+                                          <option>Select Section</option>
+                                          {% for i in section %}
+                                          <option value="{{i.id}}">{{i.name}}</option>
+                                          {% endfor %}
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-11">
+                                    <div class="form-group">
+                                       <label>Address</label>
+                                       <textarea class="form-control" name="address" >{% for i in student %}{{i.address}}{% endfor %}</textarea>
+                                    </div>
+                                 </div>
+                                 <div class="col-12">
+                                    <button type="submit" class="btn btn-success">UPDATE</button>
+                                 </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+{% endblock %}
