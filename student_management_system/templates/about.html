@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="page-wrapper">
+        <div class="rs-history sec-spacer">
+            <div class="container">
+
+                <div class="sec-title mb-50 text-center">
+                    <h2>About Us</h2>
+                </div>
+              <div class="contact-page-section">
+                    <div class="container">
+                        <style>
+                            /* CSS for Logo Section */
+                            .logo {
+                                max-width: 150px; /* Adjust the max-width as needed */
+                            }
+
+                            /* CSS to center the school name */
+                            .contact-page-section h4.text-center {
+                                margin: 0; /* Remove default margin */
+                                font-weight: bold;
+                            }
+
+                            /* CSS for spacing between logo and school name */
+                            .text-center.mb-3 {
+                                margin-bottom: 15px; /* Adjust the margin as needed */
+                            }
+
+                            /* CSS for the details section */
+                            .details {
+                                text-align: justify;
+                            }
+
+                             .characteristics-section {
+                                margin-top: 30px;
+                            }
+
+                            .characteristics-title {
+                                font-size: 24px;
+                                font-weight: bold;
+                                margin-bottom: 15px;
+                            }
+
+                            .characteristics-list {
+                                list-style-type: square;
+                                padding-left: 20px;
+                            }
+
+                            .characteristics-list .characteristics-list-item {
+                                margin-bottom: 10px;
+                                margin-left: 20px !important; /* Adjust the margin as needed */
+                            }
+                        </style>
+                        <!-- Logo Section -->
+                        <div class="text-center mb-3">
+                            <img src="{% static 'assets\img\img.png' %}" alt="Logo" class="logo">
+                        </div>
+
+                        <h4 class="text-center mb-3">London Grace Ideal School &amp; College</h4>
+                        <div class="detials" style="text-align: justify">
+                            <p>London Grace Ideal School &amp; College is an educational institute in Azim Cottage, Prottasha-22, Mohammadpur R/A, Islampur, Sylhet-3100, Sylhet, Bangladesh. It has only one campus and around 5,000 students. London Grace Ideal School &amp; College is one of the renowned educational institutes in Bangladesh. We consider every child as unique and so we maintain inclusive learning-teaching environment at every step in our great set-up. It is a fact now that our results are getting better in the public examinations every time. It has been made possible through our extensive and effective care stretched out to every individual student. Our students conglomerate here from multifarious backgrounds; various strata of the society. They enter the threshold of our strong and fortified home of learning and come out bearing an all-round personality.</p>
+                        </div>
+                        <!-- Characteristics Section -->
+                        <div class="characteristics-section">
+                            <h4 class="characteristics-title">Characteristics of the Institution:</h4>
+                            <ul class="characteristics-list">
+                                <li class="characteristics-list-item">Teaching through Bengali and English under the National Curriculum.</li>
+                                <li class="characteristics-list-item">Educational programs conducted by experienced and skilled teachers.</li>
+                                <li class="characteristics-list-item">Teaching students through the use of smart boards in the classroom.</li>
+                                <li class="characteristics-list-item">English Conversation or Spoken English Class.</li>
+                                <li class="characteristics-list-item">Maktab education or Hindu religion education and computer education are compulsory.</li>
+                                <li class="characteristics-list-item">Own playground in front of the institution.</li>
+                                <li class="characteristics-list-item">24/7 Internet and IT use on campus.</li>
+                                <li class="characteristics-list-item">Regular teacher parent meetings to improve the quality of students.</li>
+                                <li class="characteristics-list-item">Annual Sports Competition, Education Tour, Milad Mahfil, Arts and Crafts Exhibition.</li>
+                                <!-- Add more features as needed -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

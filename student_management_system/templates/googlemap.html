@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Map Example</title>
+
+    <style>
+        #googleMap {
+            height: 400px; /* Adjust the height as needed */
+            width: 100%;
+            border: 1px solid #ccc; /* Add a border for better visibility */
+            border-radius: 5px; /* Optional: Add border-radius for a rounded appearance */
+        }
+    </style>
+</head>
+<body>
+
+<div id="googleMap"></div>
+
+<script>
+    function initMap() {
+        var mapOptions = {
+            center: {lat: 24.8918, lng: 91.8714}, // Replace with the actual coordinates for your location
+            zoom: 15 // Adjust the zoom level as needed
+        };
+        var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: {lat: 24.8918, lng: 91.8714}, // Replace with the actual coordinates for your location
+            map: map,
+            title: 'London Grace Ideal School and College , Sylhet'
+        });
+    }
+</script>
+
+<!-- Load the Google Maps JavaScript API without an API key for development purposes -->
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+</script>
+
+</body>
+</html>

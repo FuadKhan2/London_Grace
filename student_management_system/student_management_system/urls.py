@@ -23,6 +23,12 @@ urlpatterns = [
     path('Profile',views.PROFILE,name='profile'),
     path('Profile/update',views.PROFILE_UPDATE,name = 'profile_update'),
 
+    #contact
+    path('Contact',views.CONTACT,name='contact'),
+
+    #ABOUT
+    path('About',views.ABOUT,name='about'),
+
     #This is HOD panel url
     path('Hod/Home',Hod_views.HOME,name='hod_home'),
     path('Hod/Student/Add',Hod_views.ADD_STUDENT,name = 'add_student'),

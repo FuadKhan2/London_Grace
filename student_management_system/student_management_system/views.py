@@ -76,3 +76,10 @@ def PROFILE_UPDATE(request):
 
     return render(request,'profile.html')
 
+
+def CONTACT(request):
+    return render(request,'contact.html')
+
+
+def ABOUT(request):
+    return render(request, 'about.html')
