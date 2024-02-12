@@ -77,7 +77,7 @@ def STAFF_FEEDBACK_SAVE(request):
         feedback = Staff_Feedback(
             staff_id = staff,
             feedback = feedback,
-            feedback_reply = feedback_reply,
+            feedback_reply = '',
         )
         feedback.save()
         messages.success(request, 'Thank You For Your Feedback !')

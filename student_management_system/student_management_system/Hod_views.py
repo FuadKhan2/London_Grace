@@ -422,7 +422,7 @@ def STAFF_SAVE_NOTIFICATION(request):
         staff_id = request.POST.get('staff_id')
         message = request.POST.get('message')
 
-        staff = Staff.objects.get(id = staff_id)
+        staff = Staff.objects.get(admin = staff_id)
 
         notification = Staff_Notification(
             staff_id = staff,
